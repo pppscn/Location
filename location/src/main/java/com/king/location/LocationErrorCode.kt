@@ -7,7 +7,7 @@ import androidx.annotation.IntDef
  */
 @IntDef(LocationErrorCode.UNKNOWN_EXCEPTION, LocationErrorCode.PERMISSION_EXCEPTION, LocationErrorCode.PROVIDER_EXCEPTION)
 @Target(AnnotationTarget.FIELD, AnnotationTarget.CLASS, AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FUNCTION)
-@kotlin.annotation.Retention(AnnotationRetention.SOURCE)
+@Retention(AnnotationRetention.SOURCE)
 annotation class LocationErrorCode {
 
     companion object{

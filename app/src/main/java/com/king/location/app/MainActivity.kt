@@ -1,6 +1,9 @@
+@file:Suppress("DEPRECATION")
+
 package com.king.location.app
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -18,6 +21,7 @@ import com.king.location.app.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
+@SuppressLint("SimpleDateFormat")
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
@@ -91,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
                 //根据坐标经纬度获取位置地址信息（WGS-84坐标系）
                 val list = geocoder.getFromLocation(location.latitude,location.longitude,1)
-                if(list.isNotEmpty()){
+                if(list?.isNotEmpty() == true){
                     builder.append("Address: \t${list[0].getAddressLine(0)}\n")
                 }
 
@@ -136,6 +140,7 @@ class MainActivity : AppCompatActivity() {
     /**
      * 开始定位
      */
+    @SuppressLint("SetTextI18n")
     private fun startLocation(){
         if(locationClient.isStarted()){//如果已经开始定位，则先停止定位
             locationClient.stopLocation()

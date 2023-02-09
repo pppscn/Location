@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat
 /**
  * @author <a href="mailto:jenly1314@gmail.com">Jenly</a>
  */
+@Suppress("DEPRECATION")
 class LocationClient(context: Context) : ILocationClient {
 
     private val mContext: Context = context.applicationContext
